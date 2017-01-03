@@ -1,6 +1,5 @@
 #!/bin/bash
 
-rm -rf /var/run/rsyslogd.pid
-service rsyslog start
-cron
-/usr/sbin/sshd -D
+service ssh start
+cd /opt/app
+pm2-docker start --auto-exit process.yml

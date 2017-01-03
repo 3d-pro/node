@@ -11,6 +11,7 @@ RUN echo 'Acquire::http::Proxy "http://172.17.0.1:3142";' > /etc/apt/apt.conf.d/
     yarn global add pm2 && \
     mkdir /opt/app && \
     mv /build-files/app.js /opt/app/app.js && \
+    mv /build-files/process.yml /opt/app/process.yml && \
     cd /opt/app && yarn add express && \
     chmod 600 /root/.ssh/authorized_keys && \
     chown root:root /start.sh && \
