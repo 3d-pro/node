@@ -9,6 +9,8 @@ RUN echo 'Acquire::http::Proxy "http://172.17.0.1:3142";' > /etc/apt/apt.conf.d/
     mv /build-files/authorized_keys /root/.ssh/authorized_keys && \
     mv /build-files/start.sh /start.sh && \
     yarn global add pm2 && \
+    ln -s /usr/bin/pm2 /usr/local/bin/pm2 && \
+    ln -s /usr/bin/pm2-docker /usr/local/bin/pm2-docker && \
     mkdir /opt/app && \
     mv /build-files/app.js /opt/app/app.js && \
     mv /build-files/process.yml /opt/app/process.yml && \
