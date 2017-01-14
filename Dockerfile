@@ -17,7 +17,7 @@ RUN echo 'Acquire::http::Proxy "http://172.17.0.1:3142";' > /etc/apt/apt.conf.d/
     chown root:root /start.sh && \
     chmod 700 /start.sh && \
     apt-get clean && \
-    rm -rf /var/lib/apt/lists/* /build-files /etc/apt/apt.conf.d/11proxy /root/.npm* /root/.yarn*
+    rm -rf /var/lib/apt/lists/* /build-files /etc/apt/apt.conf.d/11proxy
 
 CMD ["/start.sh"]
 
