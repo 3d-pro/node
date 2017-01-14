@@ -8,9 +8,7 @@ RUN echo 'Acquire::http::Proxy "http://172.17.0.1:3142";' > /etc/apt/apt.conf.d/
     apt-get install -y nodejs yarn git && \
     mv /build-files/authorized_keys /root/.ssh/authorized_keys && \
     mv /build-files/start.sh /start.sh && \
-    yarn global add pm2 && \
-    ln -s /usr/bin/pm2 /usr/local/bin/pm2 && \
-    ln -s /usr/bin/pm2-docker /usr/local/bin/pm2-docker && \
+    npm install pm2 --global && \
     mkdir /opt/app && \
     mv /build-files/app.js /opt/app/app.js && \
     mv /build-files/process.yml /opt/app/process.yml && \
