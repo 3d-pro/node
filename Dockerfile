@@ -8,6 +8,7 @@ RUN echo 'Acquire::http::Proxy "http://172.17.0.1:3142";' > /etc/apt/apt.conf.d/
     apt-get install -y nodejs yarn git && \
     mv /build-files/authorized_keys /root/.ssh/authorized_keys && \
     mv /build-files/start.sh /start.sh && \
+    mv /build-files/firstrun.sh /firstrun.sh && \
     npm install pm2 --global && \
     mkdir /opt/app && \
     mv /build-files/app.js /opt/app/app.js && \
@@ -16,6 +17,8 @@ RUN echo 'Acquire::http::Proxy "http://172.17.0.1:3142";' > /etc/apt/apt.conf.d/
     chmod 600 /root/.ssh/authorized_keys && \
     chown root:root /start.sh && \
     chmod 700 /start.sh && \
+    chmod root:root /firstrun.sh && \
+    chmod 700 /firstrun.sh && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/* /build-files /etc/apt/apt.conf.d/11proxy
 
