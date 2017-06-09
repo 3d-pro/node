@@ -23,5 +23,4 @@ RUN echo 'Acquire::http::Proxy "http://172.17.0.1:3142";' > /etc/apt/apt.conf.d/
 
 CMD ["/start.sh"]
 
-# Expose port
 EXPOSE 3000
