@@ -2,7 +2,7 @@ FROM 3dpro/openssh
 
 ADD build-files /build-files
 RUN echo 'Acquire::http::Proxy "http://172.17.0.1:3142";' > /etc/apt/apt.conf.d/11proxy && \
-    wget -qO- https://deb.nodesource.com/setup_7.x | bash - && \
+    wget -qO- https://deb.nodesource.com/setup_8.x | bash - && \
     sudo apt-key adv --fetch-keys http://dl.yarnpkg.com/debian/pubkey.gpg && \
     echo "deb http://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list && \
     apt-get update && \
