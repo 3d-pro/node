@@ -1,5 +1,5 @@
 #!/bin/bash
 
 cd /opt/app
-npm install
+yarn install
 rm -f /firstrun.sh
