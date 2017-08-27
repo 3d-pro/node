@@ -1,10 +1,10 @@
 #!/bin/bash
 
-if [ -f "/firstrun.sh" ];
+cd /opt/app
+if [ ! -f "/opt/app/node_modules" ];
 then
-        /firstrun.sh
+	yarn install
 fi
 
 service ssh start
-cd /opt/app
 pm2-docker start --auto-exit process.yml

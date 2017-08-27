@@ -16,8 +16,6 @@ RUN echo 'Acquire::http::Proxy "http://172.17.0.1:3142";' > /etc/apt/apt.conf.d/
     cd /opt/app && yarn add express && \
     chown root:root /start.sh && \
     chmod 700 /start.sh && \
-    chown root:root /firstrun.sh && \
-    chmod 700 /firstrun.sh && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/* /build-files /etc/apt/apt.conf.d/11proxy
 
