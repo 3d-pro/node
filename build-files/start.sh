@@ -1,10 +1,8 @@
 #!/bin/bash
 
-cd /opt/app
-if [ ! -f "/opt/app/node_modules" ];
-then
-	yarn install
-fi
-
+rm -rf /var/run/rsyslogd.pid
+service rsyslog start
 service ssh start
+cd /opt/app
+yarn install
 pm2-docker start --auto-exit process.yml
