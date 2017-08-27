@@ -8,7 +8,6 @@ RUN echo 'Acquire::http::Proxy "http://172.17.0.1:3142";' > /etc/apt/apt.conf.d/
     apt-get update && \
     apt-get install -y nodejs yarn git && \
     mv /build-files/start.sh /start.sh && \
-    mv /build-files/firstrun.sh /firstrun.sh && \
     yarn global add pm2 && \
     mkdir /opt/app && \
     mv /build-files/app.js /opt/app/app.js && \
