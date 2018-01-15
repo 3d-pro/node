@@ -5,4 +5,4 @@ service rsyslog start
 service ssh start
 cd /opt/app
 yarn install
-pm2-docker start --auto-exit process.yml
+pm2-docker start process.yml
