@@ -1,0 +1,14 @@
+FROM node:9-alpine
+
+RUN apk --no-cache add bash git && \
+    yarn global add pm2
+
+COPY build-files/app.js /opt/app/app.js
+COPY build-files/process.yml /opt/app/process.yml
+
+RUN cd /opt/app && yarn add express
+
+WORKDIR /opt/app
+
+EXPOSE 3000
+CMD ["/start.sh"]

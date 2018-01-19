@@ -1,8 +1,9 @@
 #!/bin/bash
 
-rm -rf /var/run/rsyslogd.pid
-service rsyslog start
-service ssh start
 cd /opt/app
-yarn install
+
+if [ !-d "$DIRECTORY" ]; then
+  yarn install
+fi
+
 pm2-docker start process.yml

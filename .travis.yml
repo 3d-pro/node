@@ -4,8 +4,10 @@ services:
 
 script:
    - docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
-   - docker pull 3dpro/apt-cacher-ng
-   - docker run -d -p 3142:3142 --hostname apt-cacher-ng --name apt-cacher-ng 3dpro/apt-cacher-ng
-   - docker pull 3dpro/openssh
-   - docker build -t 3dpro/node .
-   - docker push 3dpro/node
+   - docker build -t 3dpro/node:latest -f Dockerfile-debian .
+   - docker tag 3dpro/node:latest 3dpro/node:debian
+   - docker push 3dpro/node:latest 3dpro/node:debian
+   - docker build -t 3dpro/node:8 -f Dockerfile-8 .
+   - docker push 3dpro/node:8
+   - docker build -t 3dpro/node:9 -f Dockerfile-9 .
+   - docker push 3dpro/node:9
