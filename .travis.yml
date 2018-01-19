@@ -6,7 +6,8 @@ script:
    - docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
    - docker build -t 3dpro/node:latest -f Dockerfile-debian .
    - docker tag 3dpro/node:latest 3dpro/node:debian
-   - docker push 3dpro/node:latest 3dpro/node:debian
+   - docker push 3dpro/node:latest
+   - docker push 3dpro/node:debian
    - docker build -t 3dpro/node:8 -f Dockerfile-8 .
    - docker push 3dpro/node:8
    - docker build -t 3dpro/node:9 -f Dockerfile-9 .
