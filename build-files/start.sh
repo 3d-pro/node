@@ -2,7 +2,7 @@
 
 cd /opt/app
 
-if [ !-d "node_modules" ]; then
+if [ ! -d "node_modules" ]; then
   yarn install
 fi
 
