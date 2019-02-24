@@ -12,3 +12,7 @@ script:
    - docker push 3dpro/node:8
    - docker build -t 3dpro/node:9 -f Dockerfile-9 .
    - docker push 3dpro/node:9
+   - docker build -t 3dpro/node:10 -f Dockerfile-10 .
+   - docker push 3dpro/node:10
+   - docker build -t 3dpro/node:11 -f Dockerfile-11 .
+   - docker push 3dpro/node:11
