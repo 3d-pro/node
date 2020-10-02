@@ -1,11 +1,11 @@
 FROM 3dpro/base-debian
 
 ADD build-files /build-files
-RUN wget -qO- https://deb.nodesource.com/setup_8.x | bash - && \
+RUN wget -qO- https://deb.nodesource.com/setup_12.x | bash - && \
     apt-key adv --fetch-keys http://dl.yarnpkg.com/debian/pubkey.gpg && \
     echo "deb http://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list && \
     apt-get update && \
-    apt-get install -t experimental -y sudo vim nodejs yarn git && \
+    apt-get install -y sudo vim nodejs yarn git && \
     mv /build-files/start.sh /start.sh && \
     yarn global add pm2 && \
     mkdir /opt/app && \
