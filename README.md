@@ -1,4 +1,4 @@
-# NodeJS 8.x image of Debian Unstable [![Build Status](https://travis-ci.org/3d-pro/node.svg?branch=master)](https://travis-ci.org/3d-pro/node)
+# NodeJS 10.x++ image of Debian Unstable & Alpine [![Build Status](https://travis-ci.org/3d-pro/node.svg?branch=master)](https://travis-ci.org/3d-pro/node)
 
 ## Required Docker Images
 - openssh
